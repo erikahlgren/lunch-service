@@ -1,8 +1,8 @@
 const express = require('express')
-const https = require('https')
-const fs = require('fs')
+// const https = require('https')
+// const fs = require('fs')
 const app = express()
-const port = 8443
+const port = 3000
 const token = process.env.TOKEN
 
 const axios = require('axios').create({
@@ -15,17 +15,18 @@ const axios = require('axios').create({
   }
 })
 
-const privateKey = fs.readFileSync('./cert/server.key', 'utf8');
-const certificate = fs.readFileSync('./cert/server.crt', 'utf8');
+// const privateKey = fs.readFileSync('./cert/server.key', 'utf8');
+// const certificate = fs.readFileSync('./cert/server.crt', 'utf8');
 
-const credentials = {
-  key: privateKey,
-  cert: certificate
-  };
+// const credentials = {
+//   key: privateKey,
+//   cert: certificate
+//   };
 
-const httpsServer = https.createServer(credentials, app);
+// const httpsServer = https.createServer(credentials, app);
 
-httpsServer.listen(port);
+// httpsServer.listen(port);
+app.listen(port, () => console.log(`Service listening at http://localhost:${port}`))
 
 app.get('/lunch', (_, response) => {
 
@@ -53,4 +54,4 @@ app.get('/lunch', (_, response) => {
     response.send('Hello World!')
   })
 
-// app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+
