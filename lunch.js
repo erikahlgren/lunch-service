@@ -17,14 +17,11 @@ const axios = require('axios').create({
 
 // const privateKey = fs.readFileSync('./cert/server.key', 'utf8');
 // const certificate = fs.readFileSync('./cert/server.crt', 'utf8');
-
 // const credentials = {
 //   key: privateKey,
 //   cert: certificate
 //   };
-
 // const httpsServer = https.createServer(credentials, app);
-
 // httpsServer.listen(port);
 app.listen(port, () => console.log(`Service listening at http://localhost:${port}`))
 
@@ -42,15 +39,12 @@ app.post('/lunch', (_, response) => {
 
   axios.post('/api/users.profile.set', data)
     .then(res => {
-      console.log('res',res);
+      console.log(res.body);
     })
     .catch(err => {
-      // handle error
       console.log('error: ', err);
     })
-    
-
     response.send('Lunch!')
-  })
+})
 
 
