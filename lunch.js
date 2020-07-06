@@ -7,7 +7,6 @@ const port = 8888
 const token = process.env.TOKEN
 
 const axios = require('axios').create({
-  baseURL: 'https://slack.com',
   headers: {
     post: {
       'Content-Type': 'application/json',
@@ -38,7 +37,7 @@ app.post('/lunch', (_, response) => {
     }
   }
   
-  axios.post('/api/users.profile.set', data)
+  axios.post('https://slack.com/api/users.profile.set', data)
     .then(res => {
       console.log(res.data);
     })
