@@ -26,9 +26,9 @@ const axios = require('axios').create({
 app.listen(port, () => console.log(`Service listening at http://localhost:${port}`))
 
 app.post('/lunch', (_, response) => {
-  console.log('get lunch')
+  
   const exp = new Date().setHours(new Date().getHours() + 1)
-
+  
   const data = {
     profile: {
       status_text: 'Lunch',
@@ -36,7 +36,7 @@ app.post('/lunch', (_, response) => {
       status_expiration: exp
     }
   }
-
+  
   axios.post('/api/users.profile.set', data)
     .then(res => {
       console.log(res.status);
@@ -44,7 +44,7 @@ app.post('/lunch', (_, response) => {
     .catch(err => {
       console.log('error: ', err);
     })
-    response.send('Lunch!')
+    response.send()
 })
 
 
