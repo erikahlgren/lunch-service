@@ -28,7 +28,7 @@ const axios = require('axios').create({
 // httpsServer.listen(port);
 app.listen(port, () => console.log(`Service listening at http://localhost:${port}`))
 
-app.get('/lunch', (_, response) => {
+app.post('/lunch', (_, response) => {
   console.log('get lunch')
   const exp = new Date().setHours(new Date().getHours() + 1)
 
