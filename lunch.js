@@ -34,7 +34,7 @@ app.post('/lunch', (_, response) => {
 
   const data = {
     status_text: 'Lunch',
-    stataus_emoji: ':knife_fork_plate:',
+    status_emoji: ':knife_fork_plate:',
     status_expiration: exp
   }
 
@@ -51,7 +51,7 @@ app.post('/lunch', (_, response) => {
       console.log('always')
     })
 
-    response.send('Hello World!')
+    response.send('Lunch!')
   })
 
 
