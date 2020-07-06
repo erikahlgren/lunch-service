@@ -33,7 +33,7 @@ app.post('/lunch', (_, response) => {
     profile: {
       status_text: 'Lunch',
       status_emoji: ':knife_fork_plate:',
-      status_expiration: exp
+      // status_expiration: exp
     }
   }
   
