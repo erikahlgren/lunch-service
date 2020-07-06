@@ -40,8 +40,8 @@ app.post('/lunch', (_, response) => {
   }
   
   axios.post('/api/users.profile.set', data)
-    .then(res => {
-      console.log(res.data);
+    .then(() => {
+      console.log('Lunchrast');
     })
     .catch(err => {
       console.log('error: ', err);
