@@ -4,9 +4,11 @@ const express = require('express')
 // const fs = require('fs')
 const app = express()
 const port = 8888
+
 const token = process.env.TOKEN
 
 const axios = require('axios').create({
+  baseURL: 'https://slack.com',
   headers: {
     post: {
       'Content-Type': 'application/json',
@@ -27,17 +29,17 @@ app.listen(port, () => console.log(`Service listening at http://localhost:${port
 
 app.post('/lunch', (_, response) => {
   
-  const exp = new Date().setHours(new Date().getHours() + 1)
+  const exp = new Date().setHours(new Date().getHours() + 1) / 1000
   
   const data = {
     profile: {
-      status_text: 'Lunch',
+      status_text: 'Lunchrast',
       status_emoji: ':knife_fork_plate:',
-      status_expiration: exp / 1000
+      status_expiration: exp
     }
   }
   
-  axios.post('https://slack.com/api/users.profile.set', data)
+  axios.post('/api/users.profile.set', data)
     .then(res => {
       console.log(res.data);
     })
