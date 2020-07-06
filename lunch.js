@@ -39,7 +39,7 @@ app.post('/lunch', (_, response) => {
 
   axios.post('/api/users.profile.set', data)
     .then(res => {
-      console.log(res.body);
+      console.log(res.status);
     })
     .catch(err => {
       console.log('error: ', err);
