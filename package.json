@@ -1,0 +1,24 @@
+{
+  "name": "lunch-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lunch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikahlgren/lunch-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikahlgren/lunch-service/issues"
+  },
+  "homepage": "https://github.com/erikahlgren/lunch-service#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "https": "^1.0.0"
+  }
+}
