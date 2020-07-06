@@ -33,9 +33,11 @@ app.post('/lunch', (_, response) => {
   const exp = new Date().setHours(new Date().getHours() + 1)
 
   const data = {
-    status_text: 'Lunch',
-    status_emoji: ':knife_fork_plate:',
-    status_expiration: exp
+    profile: {
+      status_text: 'Lunch',
+      status_emoji: ':knife_fork_plate:',
+      status_expiration: exp
+    }
   }
 
   axios.post('/api/users.profile.set', data)
@@ -44,12 +46,9 @@ app.post('/lunch', (_, response) => {
     })
     .catch(err => {
       // handle error
-      console.log('err',err);
+      console.log('error: ', err);
     })
-    .then(function () {
-      // always executed
-      console.log('always')
-    })
+    
 
     response.send('Lunch!')
   })
