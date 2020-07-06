@@ -11,7 +11,7 @@ const axios = require('axios').create({
   headers: {
     post: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+      'Authorization': 'Bearer ' + token
     }
   }
 })
