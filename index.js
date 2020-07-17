@@ -16,12 +16,14 @@ const axios = require('axios').create({
 })
 
 app.listen(port, () => console.log(`Service listening at http://localhost:${port}`))
+
 app.all('/', (req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World!\n');
 })
-app.post('/lunch', (_, response) => {
+
+app.post('/lunch', (_, res) => {
   
   // Get unix timestamp one hour from now
   const exp = new Date().setHours(new Date().getHours() + 1) / 1000
@@ -41,7 +43,7 @@ app.post('/lunch', (_, response) => {
     .catch(err => {
       console.log('error: ', err);
     })
-    response.send()
+    res.send()
 })
 
 
