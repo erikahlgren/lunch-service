@@ -17,7 +17,7 @@ const axios = require('axios').create({
 
 app.listen(port, () => console.log(`Service listening at http://localhost:${port}`))
 
-app.all('/', (req, res) => {
+app.all('/', (_, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World!\n');
